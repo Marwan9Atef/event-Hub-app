@@ -1,5 +1,7 @@
+import 'package:event_hub_app/core/routes/route.dart';
 import 'package:event_hub_app/core/utils/context_util.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/widgets/custom_elevated_button.dart';
 
@@ -8,6 +10,6 @@ class ForgetButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomElevatedButton(onPressed: (){}, title: "Continue", textStyle: context.textTheme.titleLarge!,);
+    return  CustomElevatedButton(onPressed:() =>  context.pushReplacement(RouteCenter.resetPassword), title: "Continue", textStyle: context.textTheme.titleLarge!,);
   }
 }

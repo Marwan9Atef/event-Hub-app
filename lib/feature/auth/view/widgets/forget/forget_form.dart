@@ -1,6 +1,8 @@
+import 'package:event_hub_app/core/routes/route.dart';
 import 'package:event_hub_app/core/utils/context_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../../core/theme/app_theme.dart';
@@ -11,7 +13,9 @@ class ForgetForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Pinput(
-      onCompleted: (value) {},
+      onCompleted: (value) {
+        context.pushReplacement(RouteCenter.resetPassword);
+      },
       keyboardType: TextInputType.number,
       length: 4,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],

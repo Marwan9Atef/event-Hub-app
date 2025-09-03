@@ -2,6 +2,7 @@ import 'package:event_hub_app/core/routes/route.dart';
 import 'package:event_hub_app/feature/auth/view/screens/forget_password_screen.dart';
 import 'package:event_hub_app/feature/auth/view/screens/login_screen.dart';
 import 'package:event_hub_app/feature/auth/view/screens/register_screen.dart';
+import 'package:event_hub_app/feature/auth/view/screens/reset_password_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
@@ -26,7 +27,14 @@ return CustomTransitionPage(child: const RegisterScreen(), transitionsBuilder: (
         return CustomTransitionPage(child: const ForgetPasswordScreen(), transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(opacity: animation,child: child,));
 
       },
-    )
+    ),
+    GoRoute(
+      path: RouteCenter.resetPassword,
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(child: const ResetPasswordScreen(), transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(opacity: animation,child: child,));
+
+      },
+    ),
   ] );
 
 
